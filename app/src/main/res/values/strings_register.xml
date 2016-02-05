@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Strings related to login -->
+    <string name="prompt_step_1">1、输入手机/邮箱</string>
+    <string name="prompt_step_2">2、输入验证码</string>
+    <string name="prompt_step_3">3、设置密码</string>
+    <string name="test_get_code">获取验证码</string>
+    <string name="prompt_register_input_mobile">请输入你的手机号或常用邮箱</string>
+    <string name="prompt_register_input_auth_code">请输入收到的验证码</string>
+    <string name="prompt_seting_pwd">设置登陆密码</string>
+    <string name="prompt_seting_repwd">在次输入密码</string>
+</resources>

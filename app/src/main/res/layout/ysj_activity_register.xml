@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/NavPage"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include
+        layout="@layout/ysj_layout_register_prompt"
+        ></include>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red_btn_color_normal"
+        ></View>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="@color/red_btn_color_normal"
+        ></View>
+    <com.yishiji.angelplatform.widget.MyViewPager
+        android:id="@+id/content_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </com.yishiji.angelplatform.widget.MyViewPager>
+</LinearLayout>

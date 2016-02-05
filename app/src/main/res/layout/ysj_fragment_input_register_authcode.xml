@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/NavPage"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/gray"
+        android:text="验证码已发送至手机或邮箱"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="1px"
+        android:background="@color/red_btn_color_normal"
+        ></View>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:paddingLeft="15dp"
+            android:layout_height="@dimen/ysj_edit_height"
+            android:background="@null"
+            android:hint="@string/prompt_register_input_auth_code"
+            android:imeActionId="@+id/login"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true" />
+        <Button
+            android:id="@+id/again_get_auth_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/little_button"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red_btn_color_normal"
+        ></View>
+
+    <Button
+        android:id="@+id/sumbit_auth_code_btn"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_btn"
+        android:text="提交验证码"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_16"
+        />
+
+</LinearLayout>

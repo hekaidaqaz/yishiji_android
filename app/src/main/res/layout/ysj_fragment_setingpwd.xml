@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/NavPage"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText
+        android:id="@+id/seting_pwd"
+        android:layout_width="match_parent"
+        android:paddingLeft="15dp"
+        android:layout_height="@dimen/ysj_edit_height"
+        android:background="@null"
+        android:hint="@string/prompt_seting_pwd"
+        android:imeActionId="@+id/login"
+        android:imeOptions="actionUnspecified"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        ></View>
+    <EditText
+        android:id="@+id/seting_repwd"
+        android:layout_width="match_parent"
+        android:paddingLeft="15dp"
+        android:layout_height="@dimen/ysj_edit_height"
+        android:background="@null"
+        android:hint="@string/prompt_seting_repwd"
+        android:imeActionId="@+id/login"
+        android:imeOptions="actionUnspecified"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red_btn_color_normal"
+        ></View>
+
+    <Button
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_btn"
+        android:text="确认"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_16"
+        />
+</LinearLayout>
