@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yishiji.angelplatform">
+    
+    <!-- 允许程序打开网络sockets -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许程序访问有关的网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许程序访问Wi-Fi网络状态信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许应用写（非读）用户的外部存储器 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许读取电话的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许一个程序获取信息有关当前或最近运行的任务，一个缩略的任务状态，是否活动等等 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 允许程序录制音频 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 允许应用程序修改全局声音设置的权限 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!-- 允许使用PowerManager的WakeLocks保持进程在休眠时从屏幕消失 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- 允许请求访问使用照相设备 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    
+   
+    <!--  允许程序连接到已配对的蓝牙设备(非必选,由应用选择是否需要) -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!-- 允许程序发现和配对蓝牙设备(非必选,由应用选择是否需要)-->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+   <!--  GPS定位权限(非必选，由应用选择是否需要)-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+   <!--  允许一个程序访问CellID或WiFi热点来获取粗略的位置-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+   <!--  允许一个程序访问精良位置(如GPS)-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   <!--  允许程序读取用户联系人数据(非必选，由应用选择是否需要)-->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 允许访问振动设备(非必选,由应用选择是否需要)-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+   <!--  允许程序禁用键盘锁(非必选,由应用选择是否需要)-->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 允许一个程序接收到 ACTION_BOOT_COMPLETED广播在系统完成启动-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!--百度地图相关权限-->
+
+
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" >
+    </uses-permission>
+    <!-- SDK1.5需要android.permission.GET_TASKS权限判断本程序是否为当前运行的应用? -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 允许应用读取低级别的系统日志文件 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+
+    <!-- 自定义实现Application -->
+    <application
+        android:name="com.yuntongxun.ecdemo.ECApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/LauncherTheme">
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="72cbeb5deda086512cae7dd3e0e2c200" />
+        <!-- 以下两项为友盟统计 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="72cbeb5deda086512cae7dd3e0e2c200" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="yuntongxun_im_5.1.7r" />
+        <!-- Demo主程序入口 -->
+        <activity
+            android:name="com.yishiji.angelplatform.ui.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 登陆界面 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.account.LoginActivity"
+            android:label="@string/login_title_activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.account.ECSetUpServerActivity"
+            android:label="@string/login_title_activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <!-- 会话消息聊天主界面 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.chatting.ChattingActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!-- 联系人详情选项卡 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.contact.ContactDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 手机系统联系人 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.contact.MobileContactActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 发送预览图片 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.chatting.ImagePreviewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:process=":tools"
+            android:screenOrientation="portrait"
+            android:theme="@style/CCPTheme.Holo.Transparent" />
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.chatting.VideoRecordActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/CCPTheme.Holo.Transparent" />
+        <!-- 查看聊天图片 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.chatting.ImageGalleryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/CCPTheme.Holo.Transparent"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.chatting.ImageGralleryPagerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 文件浏览器 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.plugin.FileExplorerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 群组 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.group.CreateGroupActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 联系人选择 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.contact.ContactSelectListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 手机联系人选择 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.contact.MobileContactSelectActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 设置页面 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.settings.SettingsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.group.ECDiscussionActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.contact.GroupCardSelectUI"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.group.GroupInfoActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 群组搜索 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.group.SearchGroupActivity"
+            android:label="@string/title_activity_search_group"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.group.BaseSearch"
+            android:label="@string/title_activity_search_group"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.settings.EditConfigureActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_edit_configure" >
+        </activity>
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.group.GroupMemberCardActivity"
+            android:screenOrientation="portrait"
+             >
+        </activity>
+        <!-- 申请加入群组 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.group.ApplyWithGroupPermissionActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.group.GroupNoticeActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.settings.LoginSettingActivity"
+            android:label="@string/title_activity_login_setting"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.settings.SettingPersionInfoActivity"
+            android:label="@string/title_activity_setting_persion_info"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.contact.AtSomeoneUI"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <!-- VoIP 呼叫界面 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.voip.VoIPCallActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="con.yuntongxun.ecdemo.intent.ACTION_VOICE_CALL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.voip.VideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="con.yuntongxun.ecdemo.intent.ACTION_VIDEO_CALL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 实时对讲列表 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.interphone.InterPhoneListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <!-- 实时对讲房间 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.interphone.InterPhoneChatActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <!-- 会议列表 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.meeting.MeetingListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <!-- 语音会议 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.meeting.VoiceMeetingActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <!-- 创建语音群聊 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.meeting.CreateVoiceMeetingActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <!-- 会议成员的管理 -->
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.meeting.VoiceMeetingMemberManager"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <!-- 外呼邀请会议成员 -->
+
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.meeting.InviteByPhoneCall"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.videomeeting.VideoconferenceConversation"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.videomeeting.CreateVideoConference"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yuntongxun.ecdemo.ui.videomeeting.MultiVideoconference"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden" />
+
+
+        <!-- 以下为蚁世纪相关activity-->
+
+
+        <activity android:name=".ui.account.LoginActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity android:name=".ui.account.RegisterActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            />
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+        <!-- *****************************ECSDK核心服务类 Start******************************************** --> 
+        <service
+            android:name="com.yuntongxun.ecsdk.ECClientService"
+            android:enabled="true"
+            android:process=":push"/>
+
+        <receiver
+            android:name="com.yuntongxun.ecsdk.booter.CCPReceivers$BootReceiver"
+            android:process=":push">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.yuntongxun.ecsdk.booter.CCPReceivers$ConnectionReceiver"
+            android:process=":push">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.yuntongxun.ecsdk.booter.CCPReceivers$AlarmReceiver"
+            android:process=":push" />
+        
+        // *****************************ECSDK核心服务类 End*******************************************
+        // 	配置SDK消息通知广播 ,SDK通知会分三种提醒方式
+        //  1、直接通过设置的回调接口（OnChatReceiveListener）Push给应用
+        //  2、如果应用没有设置回调接口则采用（BroadcastReceiver）广播通知（v5.1.8版本）此时如果应用处于未运行状态则会直接唤醒应用处理
+        //  3、如果应用未处于运行状态并且不想被唤醒应用运行则采用状态栏通知处理（SDK直接提醒，不会通知应用）,比如调用
+        //  ECDevice#logout(ECDevice.NotifyMode, ECDevice.OnLogoutListener)退出接口传入后台接收消息才会有提醒
+
+        //  注意：以上在a和b的场景下，SDK都会将消息直接给应用处理，只有在c的情况SDK才会直接处理消息提醒，所以应用需要处理a和b两种情况
+        <receiver
+            android:name="com.yuntongxun.ecdemo.service.YuntxNotifyReceiver"
+            android:exported="false">
+            <intent-filter>
+                // 接收push消息
+                // action匹配规则{packageName + ".action" + "功能"}
+                <action android:name="com.yuntongxun.ecdemo.action.VOIP_CALL" />
+                <action android:name="com.yuntongxun.ecdemo.action.MESSAGE" />
+                <action android:name="com.yuntongxun.ecdemo.action.NOTIFICATION_CLICK" />
+                <action android:name="com.yuntongxun.ecdemo.action.PERSON_VERSION" />
+
+                // 这个配置是容联IM专有的配置，其他应用集成的时候可以忽略
+                <action android:name="com.yuntongxun.ecdemo.action.SOFT_UPDATER" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.yuntongxun.ecdemo.service.YuntxNotifyReceiver$NotifyService" />
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+    </application>
+</manifest>
